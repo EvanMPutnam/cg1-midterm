@@ -2,12 +2,6 @@
 
 using namespace std;
 
-Polygon::Vertex::Vertex( double x, double y )
-  : x( x ),
-    y( y )
-{
-}
-
 Polygon::Polygon( int n, const int *x, const int *y )
 {
   for ( int i = 0; i < n; ++i ) {
@@ -20,12 +14,22 @@ int Polygon::size() const
   return vertices.size();
 }
 
-Polygon::Vertex& Polygon::operator []( int index )
+Vertex& Polygon::operator []( int index )
 {
   return vertices[index];
 }
 
-const Polygon::Vertex& Polygon::operator []( int index ) const
+const Vertex& Polygon::operator []( int index ) const
 {
   return vertices[index];
+}
+
+vector<Edge> Polygon::edges() const
+{
+  vector<Edge> result;
+  for ( int i = 0; i < vertices.size() - 1; ++i ) {
+    result.push_back( Edge( vertices[i], vertices[i + 1] ) );
+  }
+  result.push_back( Edge( vertices.back(), vertices.front() ) );
+  return result;
 }
