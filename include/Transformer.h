@@ -1,6 +1,7 @@
 #ifndef H_TRANSFORMER
 #define H_TRANSFORMER
 
+#include "Vertex.h"
 #include "Matrix.h"
 
 class Transformer {
@@ -13,8 +14,7 @@ public:
 
   void translate( double x, double y );
 
-  template <int N>
-  void operator()( Matrix<3,N>& matrix );
+  void operator()( Vertex& v ) const;
 
 private:
 
@@ -24,14 +24,8 @@ private:
 
   static Matrix<3,3> Translate( double x, double y );
 
-
   Matrix<3,3> state;
 
 };
-
-template<int N>
-void Transformer::operator()( Matrix<3,N>& matrix ) {
-  matrix = state * matrix;
-}
 
 #endif

@@ -22,6 +22,10 @@ void Transformer::translate( double x, double y ) {
   state = state * Translate( x, y );
 }
 
+void Transformer::operator()( Vertex& v ) const {
+  v = Vertex( state * ( (Matrix<3,1>) v ) );
+}
+
 Matrix<3,3> Transformer::Rotate( double degrees ) {
   double rad = deg2rad( degrees );
   Matrix<3,3> result;
