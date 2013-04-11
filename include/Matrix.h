@@ -1,8 +1,6 @@
 #ifndef H_MATRIX
 #define H_MATRIX
 
-#include <cmath>
-
 template<int R, int C>
 class Matrix {
 
