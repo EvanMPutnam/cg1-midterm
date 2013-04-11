@@ -51,7 +51,7 @@ int cg1Canvas::addPoly (float x[], float y[], int n)
  */
 void cg1Canvas::clearTransform()
 {
-
+  transformer = Transformer();
 }
 
 /**
@@ -75,6 +75,7 @@ void cg1Canvas::drawPoly (int polyID)
  */
 void cg1Canvas::rotate (float degrees)
 {
+  transformer.rotate( degrees );
 }
 
 /**
@@ -88,6 +89,7 @@ void cg1Canvas::rotate (float degrees)
  */
 void cg1Canvas::scale (float x, float y)
 {
+  transformer.scale( x, y );
 }
 
 
@@ -130,4 +132,5 @@ void cg1Canvas::setViewport (int x, int y, int width, int height)
  */
 void cg1Canvas::translate (float x, float y)
 {
+  transformer.translate( x, y );
 }

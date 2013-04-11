@@ -10,6 +10,7 @@
 #define _cg1Canvas_h
 
 #include "simpleCanvas.h"
+#include "Transformer.h"
 
 /**
  * Simple wrapper class for midterm assignment
@@ -114,6 +115,10 @@ public:
      *
      */
     void translate (float x, float y);
+
+private:
+
+    Transformer transformer;
 
 };
 
