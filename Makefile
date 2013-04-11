@@ -33,7 +33,7 @@ PACKAGES =
 EXTRA =
 
 # Other libaries
-LDLIBS = -lsfml-graphics -lsfml-window -lGL
+LDLIBS = -lsfml-graphics-1.6 -lsfml-window-1.6 -lsfml-system-1.6 -lSOIL -lGL
 
 # assembler
 AS = as
@@ -51,7 +51,7 @@ LD = g++
 # assembler flags
 ASFLAGS = 
 # c preproccessor flags
-CPPFLAGS = -I $(CURDIR)/$(INCLUDE)
+CPPFLAGS = -I $(CURDIR)/$(INCLUDE) -I /usr/include/sfml-1.6
 # lex flags
 LFLAGS = 
 # yacc flags
