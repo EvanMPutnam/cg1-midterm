@@ -11,7 +11,9 @@ class Polygon {
 
 public:
 
-  Polygon( int n, const int *x, const int *y );
+  Polygon( int n, const float *x, const float *y );
+
+  Polygon( int n, const double *x, const double *y );
 
   int size() const;
 

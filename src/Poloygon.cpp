@@ -2,7 +2,15 @@
 
 using namespace std;
 
-Polygon::Polygon( int n, const int *x, const int *y )
+Polygon::Polygon( int n, const float *x, const float *y )
+{
+  for ( int i = 0; i < n; ++i ) {
+    vertices.push_back( Vertex( x[i], y[i] ) );
+  }
+}
+
+
+Polygon::Polygon( int n, const double *x, const double *y )
 {
   for ( int i = 0; i < n; ++i ) {
     vertices.push_back( Vertex( x[i], y[i] ) );
