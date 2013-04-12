@@ -85,7 +85,7 @@ Matrix<R,N> Matrix<R,C>::operator*( const Matrix<C,N>& b ) const {
   Matrix<R,N> result;
   for ( int j = 0; j < N; ++j ) {
     for ( int i = 0; i < R; ++i ) {
-      int v = 0;
+      double v = 0;
       for ( int k = 0; k < C; ++k ) {
         v += data[i][k] * b[k][j];
       }

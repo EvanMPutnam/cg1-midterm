@@ -3,27 +3,31 @@
 #include <cmath>
 
 namespace {
-  const double PI = 3.14159265359;
+  const double PI = 3.14159265358979323856;
 
   double deg2rad( double degree ) {
-    return ( degree / 180 ) * PI;
+    return ( degree / 180.0 ) * PI;
   }
 }
 
 void Transformer::rotate( double degrees ) {
-  state = state * Rotate( degrees );
+  state = Rotate( degrees ) * state;
 }
 
 void Transformer::scale( double x, double y ) {
-  state = state * Scale( x, y );
+  state = Scale( x, y ) * state;
 }
 
 void Transformer::translate( double x, double y ) {
-  state = state * Translate( x, y );
+  state = Translate( x, y ) * state;
 }
 
 void Transformer::operator()( Vertex& v ) const {
-  v = Vertex( state * ( (Matrix<3,1>) v ) );
+  Matrix<3,1> m;
+  m[0][0] = v.x; m[1][0] = v.y; m[2][0] = 1;
+  m = state * m;
+
+  v.x = m[0][0]; v.y = m[0][1];
 }
 
 Matrix<3,3> Transformer::Rotate( double degrees ) {

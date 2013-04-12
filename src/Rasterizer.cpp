@@ -1,4 +1,5 @@
 #include <algorithm>
+#include <cmath>
 
 #include "Rasterizer.h"
 
@@ -81,6 +82,12 @@ vector<Edge> global_edge_list( const vector<Edge> &edge_list )
   for ( int i = 0; i < edge_list.size(); ++i ) {
     if ( edge_list[i].first.y != edge_list[i].second.y ) {
       result.push_back( edge_list[i] );
+
+      // actual floating point values fubar all the things
+      result.back().first.x = int(result.back().first.x);
+      result.back().first.y = int(result.back().first.y);
+      result.back().second.x = int(result.back().second.x);
+      result.back().second.y = int(result.back().second.y);
     }
   }
   sort( result.begin(), result.end() );

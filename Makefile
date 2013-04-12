@@ -33,7 +33,8 @@ PACKAGES =
 EXTRA =
 
 # Other libaries
-LDLIBS = -lsfml-graphics-1.6 -lsfml-window-1.6 -lsfml-system-1.6 -lSOIL -lGL
+#LDLIBS = -lsfml-graphics-1.6 -lsfml-window-1.6 -lsfml-system-1.6 -lSOIL -lGL
+LDLIBS = -lsfml-graphics -lsfml-window -lGL
 
 # assembler
 AS = as
