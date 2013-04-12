@@ -9,6 +9,9 @@
 #ifndef _cg1Canvas_h
 #define _cg1Canvas_h
 
+#include <vector>
+
+#include "Polygon.h"
 #include "simpleCanvas.h"
 #include "Transformer.h"
 #include "Polygon.h"
@@ -121,7 +124,7 @@ private:
 
     Transformer transformer;
 
-    vector<Polygon> polygons;
+    std::vector<Polygon> polygons;
 
 };
 

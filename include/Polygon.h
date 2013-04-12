@@ -21,7 +21,7 @@ public:
 
   const Vertex& operator []( int index ) const;
 
-  std::vector<Edge> edges() const;
+  std::vector<Edge> edge_list() const;
 
   template<typename T>
   void apply( const T& t );

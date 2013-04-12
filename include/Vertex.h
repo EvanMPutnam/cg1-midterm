@@ -9,7 +9,7 @@ struct Vertex {
 
   explicit Vertex( const Matrix<3,1>& src );
 
-  bool operator<( const Vertex& b );
+  bool operator<( const Vertex& b ) const;
 
   operator Matrix<3,1>();
 

@@ -9,7 +9,6 @@ Polygon::Polygon( int n, const float *x, const float *y )
   }
 }
 
-
 Polygon::Polygon( int n, const double *x, const double *y )
 {
   for ( int i = 0; i < n; ++i ) {
@@ -32,7 +31,7 @@ const Vertex& Polygon::operator []( int index ) const
   return vertices[index];
 }
 
-vector<Edge> Polygon::edges() const
+vector<Edge> Polygon::edge_list() const
 {
   vector<Edge> result;
   for ( int i = 0; i < vertices.size() - 1; ++i ) {

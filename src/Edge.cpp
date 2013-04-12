@@ -29,3 +29,8 @@ double Edge::slope_inverse() const
 {
   return ( second.x - first.x ) / ( second.y - first.y );
 }
+
+bool Edge::operator<( const Edge &other ) const
+{
+  return first < other.first;
+}

@@ -13,6 +13,8 @@ struct Edge {
 
   double slope_inverse() const;
 
+  bool operator<( const Edge &other ) const;
+
   Vertex first;
 
   Vertex second;

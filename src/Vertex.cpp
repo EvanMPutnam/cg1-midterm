@@ -16,7 +16,7 @@ Vertex::Vertex( const Matrix<3,1>& src )
 {
 }
 
-bool Vertex::operator<( const Vertex& b )
+bool Vertex::operator<( const Vertex& b ) const
 {
   return ( y < b.y ) || ( y == b.y && x < b.x );
 }
