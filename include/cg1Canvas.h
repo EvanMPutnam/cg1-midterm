@@ -11,6 +11,7 @@
 
 #include "simpleCanvas.h"
 #include "Transformer.h"
+#include "Polygon.h"
 
 /**
  * Simple wrapper class for midterm assignment
@@ -119,6 +120,8 @@ public:
 private:
 
     Transformer transformer;
+
+    vector<Polygon> polygons;
 
 };
 

@@ -27,4 +27,5 @@ Vertex::operator Matrix<3,1>()
   result[0][0] = x;
   result[1][0] = y;
   result[2][0] = 1;
+  return result;
 }

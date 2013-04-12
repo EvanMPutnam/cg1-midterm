@@ -1,5 +1,7 @@
 #include "Rasterizer.h"
 
+using namespace std;
+
 Rasterizer::Rasterizer( simpleCanvas &canvas )
   : canvas( canvas )
 {
