@@ -122,9 +122,18 @@ public:
 
 private:
 
+    int w, h;
+
     Transformer transformer;
 
     std::vector<Polygon> polygons;
+
+    struct {
+      int x;
+      int y;
+      int width;
+      int height;
+    } viewport;
 
 };
 

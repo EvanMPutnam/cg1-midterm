@@ -22,7 +22,10 @@
  * @param w width of canvas
  * @param h height of canvas
  */
-cg1Canvas::cg1Canvas(int w, int h) : simpleCanvas (w,h)
+cg1Canvas::cg1Canvas(int w, int h)
+  : simpleCanvas (w,h),
+    w( w ),
+    h( h )
 {
 }
 
@@ -67,8 +70,12 @@ void cg1Canvas::clearTransform()
 void cg1Canvas::drawPoly (int polyID)
 {
   Rasterizer r( *this );
+  Transformer t( transformer );
+  t.scale( double(viewport.width) / double(w), double(viewport.height) / double(h) );
+  t.translate( viewport.x, viewport.y );
+
   Polygon p( polygons[polyID] );
-  p.apply( transformer );
+  p.apply( t );
   r.draw_polygon( p );
 }
 
@@ -126,6 +133,10 @@ void cg1Canvas::setClipWindow (float bottom, float top, float left, float right)
  */
 void cg1Canvas::setViewport (int x, int y, int width, int height)
 {
+  viewport.x = x;
+  viewport.y = y;
+  viewport.width = width;
+  viewport.height = height;
 }
 
 /**
