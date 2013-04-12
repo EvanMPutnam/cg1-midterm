@@ -6,6 +6,8 @@
 //  Copyright 2011 Rochester Institute of Technology. All rights reserved.
 //
 
+#include "Rasterizer.h"
+
 #include "cg1Canvas.h"
 
 
@@ -40,7 +42,8 @@ cg1Canvas::cg1Canvas(int w, int h) : simpleCanvas (w,h)
  */
 int cg1Canvas::addPoly (float x[], float y[], int n)
 {    
-    return 0;
+    polygons.push_back( Polygon( n, x, y ) );
+    return polygons.size() - 1;
 }
 
 
@@ -63,6 +66,8 @@ void cg1Canvas::clearTransform()
  */
 void cg1Canvas::drawPoly (int polyID)
 {
+  Rasterizer r( *this );
+  r.draw_polygon( polygons[polyID] );
 }
 
 /**

@@ -9,6 +9,9 @@
 #ifndef _cg1Canvas_h
 #define _cg1Canvas_h
 
+#include <vector>
+
+#include "Polygon.h"
 #include "simpleCanvas.h"
 
 /**
@@ -114,6 +117,10 @@ public:
      *
      */
     void translate (float x, float y);
+
+private:
+
+    std::vector<Polygon> polygons;
 
 };
 

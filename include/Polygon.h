@@ -11,7 +11,9 @@ class Polygon {
 
 public:
 
-  Polygon( int n, const int *x, const int *y );
+  Polygon( int n, const float *x, const float *y );
+
+  Polygon( int n, const double *x, const double *y );
 
   int size() const;
 
@@ -19,7 +21,7 @@ public:
 
   const Vertex& operator []( int index ) const;
 
-  std::vector<Edge> edges() const;
+  std::vector<Edge> edge_list() const;
 
 private:
 
